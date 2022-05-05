@@ -1,5 +1,7 @@
+import { Formik } from "formik";
 import React from "react";
 import styled from "styled-components";
+import Button from "../Button";
 import Input from "../Input";
 import Title from "../Title";
 
@@ -12,7 +14,7 @@ const Container = styled.div`
   background: #fff;
 `;
 
-const Form = styled.form`
+const Form = styled(Formik)`
   padding: 0 100px;
   display: flex;
   flex-direction: column;
@@ -78,7 +80,12 @@ const About = styled(Title)`
   margin: 16px auto;
 `;
 
+interface MyFormValues {
+  name: string;
+}
+
 function Register() {
+  const initialValues: MyFormValues = { name: "asdasd" };
   return (
     <Container>
       <Header>
@@ -90,14 +97,14 @@ function Register() {
         <Row>
           <Item>
             <Title size={16}>Name</Title>
-            <Input sizee="md" />
+            <Input type="text" name="name" />
           </Item>
         </Row>
-        <Item>
+        {/* <Item>
           <Title size={16}>Birth date</Title>
           <Input sizee="md" />
-        </Item>
-
+          </Item>
+          
         <Title size={16}>CPF</Title>
         <Input sizee="md" />
 
@@ -106,8 +113,8 @@ function Register() {
           <Item>
             <Title size={16}> zip code</Title>
             <Input sizee="md" />
-          </Item>
-          <Item>
+            </Item>
+            <Item>
             <Title size={16}>Name of street/Avenue</Title>
             <Input sizee="md" />
           </Item>
@@ -118,18 +125,22 @@ function Register() {
           <Item>
             <Title size={16}>Number</Title>
             <Input sizee="md" />
-          </Item>
-
+            </Item>
+            
           <Item>
             <Title size={16}>City</Title>
             <Input sizee="md" />
-          </Item>
-
-          <Item>
+            </Item>
+            
+            <Item>
             <Title size={16}>state</Title>
             <Input sizee="md" />
           </Item>
-        </AdressInfo>
+        </AdressInfo> */}
+
+        <Button primary type="submit">
+          Register
+        </Button>
       </Form>
     </Container>
   );
