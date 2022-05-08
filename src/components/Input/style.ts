@@ -1,3 +1,4 @@
+import { Props } from "react-input-mask";
 import styled from "styled-components";
 import { IInputProps } from ".";
 

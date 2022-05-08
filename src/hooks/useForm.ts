@@ -23,15 +23,22 @@ export const useForm = <T extends Record<keyof T, any> = {}>(options?: {
   validations?: Validations<T>;
   initialValues?: Partial<T>;
   onSubmit?: () => void;
+  onError?: (errors: ErrorRecord<T>) => void;
 }) => {
   const [data, setData] = useState<T>((options?.initialValues || {}) as T);
   const [errors, setErrors] = useState<ErrorRecord<T>>({});
 
   // Needs to extend unknown so we can add a generic to an arrow function
   const handleChange =
-    <S extends unknown>(key: keyof T, sanitizeFn?: (value: string) => S) =>
+    <S extends unknown>(key: keyof T, sanitizeFn?: (value: any) => S) =>
     (e: ChangeEvent<HTMLInputElement & HTMLSelectElement>) => {
       const value = sanitizeFn ? sanitizeFn(e.target.value) : e.target.value;
+
+      setErrors({
+        ...errors,
+        [key]: undefined,
+      });
+
       setData({
         ...data,
         [key]: value,
@@ -67,6 +74,8 @@ export const useForm = <T extends Record<keyof T, any> = {}>(options?: {
 
       if (!valid) {
         setErrors(newErrors);
+
+        options?.onError && options.onError(newErrors);
         return;
       }
     }
@@ -79,6 +88,7 @@ export const useForm = <T extends Record<keyof T, any> = {}>(options?: {
   };
 
   return {
+    setData,
     data,
     handleChange,
     handleSubmit,

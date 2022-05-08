@@ -8,6 +8,8 @@ type Props = {
 };
 
 const Title = styled.h1<Props>`
+  ${(props) => props.theme.fonts.primary};
+  letter-spacing: 3px;
   font-size: 32px;
   font-weight: bold;
   color: ${(props) =>

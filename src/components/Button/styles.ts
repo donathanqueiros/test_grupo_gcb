@@ -6,8 +6,8 @@ export const StyledButton = styled.button<{ primary?: boolean; theme: any }>`
   justify-content: center;
   align-items: center;
   border-radius: 5px;
-  padding: 0;
-  height: 52px;
+  padding: 0px 14px;
+  min-height: 52px;
   background-color: ${({ primary, theme }) =>
     primary ? theme.colors.primary : "#fff"};
   span {

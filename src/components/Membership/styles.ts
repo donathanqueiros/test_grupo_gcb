@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 import FinalImage from "../../assets/FinalImage.svg";
+import { devices } from "../../styles/divice";
 
 export const Container = styled.div`
   display: flex;
@@ -11,11 +12,12 @@ export const Container = styled.div`
   background-repeat: no-repeat;
   background-position-x: right;
   background-position-y: top;
-  padding-left: 137px;
+  padding-left: 10%;
+  padding-right: 10%;
 
   > div {
     width: 454px;
-    height: 168px;
+    min-height: 168px;
 
     h1 {
       font-size: 32px;
@@ -37,6 +39,12 @@ export const Container = styled.div`
         height: 54px;
         border-radius: 5px;
       }
+    }
+
+    @media ${devices.laptop} {
+      background-color: rgba(255, 255, 255, 0.6);
+      box-sizing: content-box;
+      padding: 16px 16px;
     }
   }
 `;

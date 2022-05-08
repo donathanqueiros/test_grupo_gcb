@@ -1,15 +1,14 @@
-import React, { useEffect, useState } from "react";
+import { useState } from "react";
 import Button from "../Button";
 import Modal from "react-modal";
 import { Container, Logo, Menus } from "./styles";
 import Register from "../Register";
+import Welcome from "../Welcome";
 
 const customStyles = {
   content: {
     margin: "0 auto",
-
     maxWidth: "600px",
-    boxSizeing: "border-box",
     padding: "0",
   },
 };
@@ -17,19 +16,21 @@ const customStyles = {
 Modal.setAppElement("#root");
 
 const Header = () => {
-  const [showModal, setShowModal] = useState(true);
+  const [showModalRegister, setShowModalRegister] = useState(false);
+  const [showModalWelcome, setShowModalWelcome] = useState(false);
 
-  function openModal() {
-    setShowModal(true);
-  }
+  const openModalRegister = () => setShowModalRegister(true);
 
-  function afterOpenModal() {
-    // references are now sync'd and can be accessed.
-  }
+  const closeModalRegister = () => setShowModalRegister(false);
 
-  function closeModal() {
-    setShowModal(false);
-  }
+  const openModalWelcome = () => setShowModalWelcome(true);
+
+  const closeModalWelcome = () => setShowModalWelcome(false);
+
+  const onSubmitRegister = () => {
+    closeModalRegister();
+    openModalWelcome();
+  };
 
   return (
     <Container>
@@ -41,17 +42,29 @@ const Header = () => {
         <span>HEALTHY RECIPES</span>
         <span>BLOG</span>
         <span>JOIN</span>
-        <Button onClick={openModal}>REGISTER</Button>
+        <Button onClick={openModalRegister}>REGISTER</Button>
       </Menus>
 
       <Modal
-        isOpen={showModal}
-        onAfterOpen={afterOpenModal}
-        onRequestClose={closeModal}
+        isOpen={showModalRegister}
+        onRequestClose={closeModalRegister}
         style={customStyles}
-        contentLabel="Example Modal"
       >
-        <Register />
+        <Register onSubmit={onSubmitRegister} />
+      </Modal>
+
+      <Modal
+        isOpen={showModalWelcome}
+        onRequestClose={closeModalWelcome}
+        style={{
+          ...customStyles,
+          content: {
+            ...customStyles.content,
+            height: "302px",
+          },
+        }}
+      >
+        <Welcome OnContinue={closeModalWelcome} />
       </Modal>
     </Container>
   );

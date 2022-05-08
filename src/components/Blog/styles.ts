@@ -20,6 +20,8 @@ export const Container = styled.div`
     }
 
     span {
+      display: flex;
+      text-align: center;
       font-size: 16px;
       color: #9e9baf;
     }
@@ -27,16 +29,17 @@ export const Container = styled.div`
 `;
 
 export const BlogCard = styled.div`
-  width: 348px;
-  height: 450px;
-  background-color: #fff;
   display: flex;
   flex-direction: column;
+  background-color: #fff;
+  box-sizing: border-box;
+  padding-bottom: 32px;
+  width: 348px;
+  height: 450px;
   box-shadow: 0px 15px 20px rgba(29, 22, 77, 0.08);
   border-radius: 7px;
   > img {
     height: 247px;
-    margin-bottom: 32px;
     border-radius: 7px 7px 0 0;
   }
 
@@ -45,11 +48,15 @@ export const BlogCard = styled.div`
     flex-direction: column;
     justify-content: space-between;
     align-items: flex-start;
-    margin-left: 24px;
-    width: 234px;
+    box-sizing: border-box;
+    padding: 32px 24px;
     height: 139px;
     h1 {
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
       text-align: start;
+      flex-grow: 1;
       font-size: 24px;
       font-weight: bold;
       color: ${(props) => props.theme.colors.secondary};

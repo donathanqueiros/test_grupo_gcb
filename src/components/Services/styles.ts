@@ -1,5 +1,16 @@
 import styled from "styled-components";
 import Services from "../../assets/Services.svg";
+import { devices } from "../../styles/divice";
+
+export const Text = styled.div`
+  width: 100%;
+  text-align: left;
+  min-height: 238px;
+  font-size: 16px;
+  line-height: 27px;
+  letter-spacing: 0.1em;
+  color: #9e9baf;
+`;
 
 export const Container = styled.div`
   background-image: url(${Services});
@@ -12,7 +23,27 @@ export const Container = styled.div`
   justify-content: start;
   align-items: flex-end;
 
-  height: 757px;
+  box-sizing: border-box;
+  padding-right: 250px;
+  padding-top: 136.8px;
+  min-height: 757px;
+
+  ${Text} {
+    margin-bottom: 50px;
+  }
+
+  @media ${devices.laptopL} {
+    padding-right: 150px;
+  }
+
+  @media ${devices.laptop} {
+    padding-right: 0;
+  }
+  @media ${devices.tablet} {
+    align-items: center;
+
+    background-position-y: top;
+  }
 `;
 
 export const Content = styled.div`
@@ -20,11 +51,9 @@ export const Content = styled.div`
   justify-content: start;
   align-items: flex-start;
   flex-direction: column;
-  width: 100%;
-  max-width: 420px;
-  height: 454px;
-  margin-right: 250px;
-  margin-top: 136.8px;
+  max-width: 418px;
+  min-height: 454px;
+
   h1 {
     margin: 0;
     padding: 0;
@@ -35,15 +64,15 @@ export const Content = styled.div`
   }
 
   Button {
-    width: 150px;
-    height: 42px;
+    min-width: 150px;
+    min-height: 42px;
     border-radius: 5px;
+    padding: 16px 32px;
   }
-`;
 
-export const Text = styled.div`
-  text-align: left;
-  height: 238px;
-  font-size: 16px;
-  color: #9e9baf;
+  @media ${devices.laptop} {
+    background-color: rgba(255, 255, 255, 0.9);
+    box-sizing: content-box;
+    padding: 16px 16px;
+  }
 `;

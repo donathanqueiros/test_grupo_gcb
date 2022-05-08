@@ -11,24 +11,22 @@ function Blog() {
           Vokalia and Consonantia, there live the blind texts.
         </span>
       </div>
-      <div>
-        <BlogCard>
-          <img
-            src="https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80"
-            alt=""
-          />
+      <BlogCard>
+        <img
+          src="https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80"
+          alt=""
+        />
+        <div>
+          <h1>Quick-start guide to nuts and seeds</h1>
           <div>
-            <h1>Quick-start guide to nuts and seeds</h1>
-            <div>
-              <img
-                src="https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80"
-                alt=""
-              />
-              <span>Kevin Ibrahim</span>
-            </div>
+            <img
+              src="https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80"
+              alt=""
+            />
+            <span>Kevin Ibrahim</span>
           </div>
-        </BlogCard>
-      </div>
+        </div>
+      </BlogCard>
     </Container>
   );
 }

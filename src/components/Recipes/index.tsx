@@ -1,6 +1,16 @@
-import React from "react";
-import Button from "../Button";
-import { Container, Recipes as RecipesList, RecipeCard, Title } from "./styles";
+import RecipeCard from "../RecipeCard";
+import { Container, RecipeList, Title } from "./styles";
+import food1 from "../../assets/comida_1.svg";
+import food2 from "../../assets/comida_2.svg";
+import food3 from "../../assets/comida_3.svg";
+import food4 from "../../assets/comida_4.svg";
+
+const dataCards = [
+  { name: "Broccoli Salad with Bacon", src: food1 },
+  { name: "Classic Beef Burgers", src: food2 },
+  { name: "Classic Potato Salad", src: food3 },
+  { name: "Cherry Cobbler on the Grill", src: food4 },
+];
 
 function Recipes() {
   return (
@@ -8,61 +18,16 @@ function Recipes() {
       <Title>
         <h1>Our Best Recipes</h1>
         <span>
-          Far far away, behind the word mountains, far from the countries
+          Far far away, behin1d the word mountains, far from the countries
           Vokalia and Consonantia, there live the blind texts.
         </span>
       </Title>
 
-      <RecipesList>
-        <RecipeCard>
-          <img
-            src="https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80"
-            alt=""
-          />
-          <div>
-            <h1>Broccoli Salad with Bacon</h1>
-            <Button primary>
-              <span>See Recipe</span>
-            </Button>
-          </div>
-        </RecipeCard>
-        <RecipeCard>
-          <img
-            src="https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80"
-            alt=""
-          />
-          <div>
-            <h1>Broccoli Salad with Bacon</h1>
-            <Button primary>
-              <span>See Recipe</span>
-            </Button>
-          </div>
-        </RecipeCard>
-        <RecipeCard>
-          <img
-            src="https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80"
-            alt=""
-          />
-          <div>
-            <h1>Broccoli Salad with Bacon</h1>
-            <Button primary>
-              <span>See Recipe</span>
-            </Button>
-          </div>
-        </RecipeCard>
-        <RecipeCard>
-          <img
-            src="https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80"
-            alt=""
-          />
-          <div>
-            <h1>Broccoli Salad with Bacon</h1>
-            <Button primary>
-              <span>See Recipe</span>
-            </Button>
-          </div>
-        </RecipeCard>
-      </RecipesList>
+      <RecipeList>
+        {dataCards.map(({ name, src }, index) => (
+          <RecipeCard key={index} title={name} src={src} />
+        ))}
+      </RecipeList>
     </Container>
   );
 }
