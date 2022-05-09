@@ -17,7 +17,7 @@ Modal.setAppElement("#root");
 
 const Header = () => {
   const [showModalRegister, setShowModalRegister] = useState(false);
-  const [showModalWelcome, setShowModalWelcome] = useState(false);
+  const [showModalWelcome, setShowModalWelcome] = useState(true);
 
   const openModalRegister = () => setShowModalRegister(true);
 
