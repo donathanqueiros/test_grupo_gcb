@@ -4,6 +4,7 @@ export const StyledButton = styled.button<{ primary?: boolean; theme: any }>`
   border: none;
   display: flex;
   justify-content: center;
+  cursor: pointer;
   align-items: center;
   border-radius: 5px;
   padding: 0px 14px;

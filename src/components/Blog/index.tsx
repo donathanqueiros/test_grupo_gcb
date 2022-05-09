@@ -1,33 +1,28 @@
-import React from "react";
-import { BlogCard, Container } from "./styles";
+import BlogCard from "../BlogCard";
+import { Container, CardList } from "./styles";
+import { useHorizontalScroll } from "../../hooks/useHorizontalScroll";
+import { data } from "./data";
 
 function Blog() {
+  const scrollRef = useHorizontalScroll();
   return (
-    <Container>
-      <div>
-        <h1>Read Our blog</h1>
-        <span>
-          Far far away, behind the word mountains, far from the countries
-          Vokalia and Consonantia, there live the blind texts.
-        </span>
-      </div>
-      <BlogCard>
-        <img
-          src="https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80"
-          alt=""
-        />
+    <section id="blog">
+      <Container>
         <div>
-          <h1>Quick-start guide to nuts and seeds</h1>
-          <div>
-            <img
-              src="https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80"
-              alt=""
-            />
-            <span>Kevin Ibrahim</span>
-          </div>
+          <h1>Read Our blog</h1>
+          <span>
+            Far far away, behind the word mountains, far from the countries
+            Vokalia and Consonantia, there live the blind texts.
+          </span>
         </div>
-      </BlogCard>
-    </Container>
+
+        <CardList ref={scrollRef as any}>
+          {data.map(({ title, src, author }, index) => (
+            <BlogCard key={index} title={title} src={src} author={author} />
+          ))}
+        </CardList>
+      </Container>
+    </section>
   );
 }
 

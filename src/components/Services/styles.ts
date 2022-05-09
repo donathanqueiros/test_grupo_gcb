@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import Services from "../../assets/Services.svg";
+import Services from "../../assets/img/Services.svg";
 import { devices } from "../../styles/divice";
 
 export const Text = styled.div`

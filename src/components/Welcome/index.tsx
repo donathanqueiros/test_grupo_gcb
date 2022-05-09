@@ -1,9 +1,7 @@
-import { userInfo } from "os";
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import styled from "styled-components";
 import { IUser } from "../../interfaces/User";
 import Button from "../Button";
-import { Text } from "../Services/styles";
 import Title from "../Title";
 
 const Container = styled.div`

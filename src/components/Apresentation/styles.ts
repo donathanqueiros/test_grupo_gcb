@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import Illustration from "../../assets/Illustration.svg";
+import Illustration from "../../assets/img/Illustration.svg";
 import { devices } from "../../styles/divice";
 
 export const Container = styled.div`
@@ -19,7 +19,7 @@ export const Container = styled.div`
 `;
 
 export const Headline = styled.div`
-  width: 412px;
+  max-width: 412px;
   min-height: 284px;
   display: flex;
   flex-direction: column;
@@ -53,5 +53,11 @@ export const Headline = styled.div`
     background-color: rgba(255, 255, 255, 0.6);
     box-sizing: border-box;
     padding: 16px 16px;
+  }
+  @media ${devices.mobileL} {
+    margin-top: 40px;
+  }
+  @media ${devices.mobileS} {
+    margin-top: 68px;
   }
 `;

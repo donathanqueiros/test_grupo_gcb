@@ -5,6 +5,7 @@ export const Container = styled.div`
   position: absolute;
   width: 100%;
   max-width: 1366px;
+  min-width: 544px;
   padding: 0 calc(1366px * 0.1);
   display: flex;
   justify-content: space-between;
@@ -30,7 +31,8 @@ export const Logo = styled.span`
 `;
 
 export const Menus = styled.div`
-  width: 455px;
+  max-width: 455px;
+  width: 100%;
   height: 52px;
   display: flex;
   justify-content: space-between;

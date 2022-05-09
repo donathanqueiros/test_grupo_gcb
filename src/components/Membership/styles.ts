@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-import FinalImage from "../../assets/FinalImage.svg";
+import FinalImage from "../../assets/img/FinalImage.svg";
 import { devices } from "../../styles/divice";
 
 export const Container = styled.div`

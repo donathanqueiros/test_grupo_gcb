@@ -13,11 +13,11 @@ import Footer from "./components/Footer";
 
 const Container = styled.div`
   width: 100%;
+  min-width: 544px;
   max-width: 1366px;
   margin: 0 auto;
   box-sizing: border-box;
   background: #fff;
-  box-sizing: border-box;
 `;
 
 function App() {

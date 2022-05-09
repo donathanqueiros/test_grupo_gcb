@@ -4,6 +4,7 @@ import App from "./App";
 import { ThemeProvider } from "styled-components";
 import GlobalStyle from "./globalStyles";
 import theme from "./styles/theme";
+import "react-perfect-scrollbar/dist/css/styles.css";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement

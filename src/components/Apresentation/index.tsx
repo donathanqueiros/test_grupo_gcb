@@ -1,7 +1,7 @@
 import Button from "../Button";
 import Input from "../Input";
 import { Container, Headline } from "./styles";
-import SearchIcon from "../../assets/searchIcon.svg";
+import SearchIcon from "../../assets/img/searchIcon.svg";
 import Title from "../Title";
 
 function Apresentation() {

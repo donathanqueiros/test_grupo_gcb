@@ -1,11 +1,8 @@
-import axios from "axios";
 import { useEffect, useState } from "react";
-import styled from "styled-components";
 import { useForm } from "../../hooks/useForm";
 import { IUser } from "../../interfaces/User";
 import zipCodeService from "../../services/zipCodeService";
 import { setCookie } from "../../shared/cookies";
-import { CPFValidator, DateValidator } from "../../shared/validations";
 import Button from "../Button";
 import Input, { InputBirthDate, InputCPF, InputZipCode } from "../Input";
 import Title from "../Title";
@@ -98,6 +95,7 @@ function Register({ onSubmit }: { onSubmit?: (user: IUser) => void }) {
           setIsZipCodeValid(false);
         });
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [data.zipCode]);
 
   return (

@@ -39,8 +39,13 @@ const Header = () => {
       </div>
 
       <Menus>
-        <span>HEALTHY RECIPES</span>
-        <span>BLOG</span>
+        <span>
+          <a href="#recipes">HEALTHY RECIPES</a>
+        </span>
+        <span>
+          {" "}
+          <a href="#blog">BLOG </a>
+        </span>
         <span>JOIN</span>
         <Button onClick={openModalRegister}>REGISTER</Button>
       </Menus>
