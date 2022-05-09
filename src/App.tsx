@@ -1,5 +1,3 @@
-import "./App.css";
-
 import Header from "./components/Header";
 import Apresentation from "./components/Apresentation";
 import Recipes from "./components/Recipes";
@@ -30,7 +28,7 @@ function App() {
   }, []);
 
   return (
-    <Container className="App">
+    <Container>
       <Header />
       <Apresentation />
       <Recipes />
