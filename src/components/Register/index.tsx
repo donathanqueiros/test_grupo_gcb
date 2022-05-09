@@ -77,10 +77,10 @@ function Register({ onSubmit }: { onSubmit?: (user: IUser) => void }) {
         .then((response) => {
           setData({
             ...data,
-            street: response.data.logradouro,
-            neighborhood: response.data.bairro,
-            city: response.data.localidade,
-            state: response.data.uf,
+            street: response.data.street,
+            neighborhood: response.data.neighborhood,
+            city: response.data.city,
+            state: response.data.state,
           });
           setIsZipCodeValid(true);
         })
