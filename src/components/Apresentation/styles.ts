@@ -16,6 +16,14 @@ export const Container = styled.div`
   box-sizing: border-box;
   padding: 0 10%;
   height: 768px;
+
+
+  @media ${devices.laptop} {
+    background-position-x: 100% !important;
+  }
+  @media ${devices.tablet} {
+    background-position-x: 55% !important;
+  }
 `;
 
 export const Headline = styled.div`
@@ -51,6 +59,7 @@ export const Headline = styled.div`
 
   @media ${devices.laptop} {
     background-color: rgba(255, 255, 255, 0.6);
+    background-position-y: 10% !important;
     box-sizing: border-box;
     padding: 16px 16px;
   }
