@@ -6,10 +6,6 @@ export const validationsRegisterForm = ({
   isZipCodeValid: boolean;
 }) => ({
   name: {
-    pattern: {
-      value: "^[A-Za-z]*$",
-      message: "This name is invalid ...",
-    },
     required: {
       value: true,
       message: "Name is required",

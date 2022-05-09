@@ -113,27 +113,34 @@ function Register({ onSubmit }: { onSubmit?: (user: IUser) => void }) {
             {errors.name && <p className="error">{errors.name}</p>}
           </Item>
         </Row>
+
         <Item>
           <Title size={16}>Birth date</Title>
           <InputBirthDate
             value={data.birthDate || ""}
             onChange={handleChange("birthDate")}
+            type="tel"
           />
           {errors.birthDate && <p className="error">{errors.birthDate}</p>}
         </Item>
         <Item>
           <Title size={16}>CPF</Title>
-          <InputCPF value={data.cpf || ""} onChange={handleChange("cpf")} />
+          <InputCPF
+            value={data.cpf || ""}
+            onChange={handleChange("cpf")}
+            type="tel"
+          />
           {errors.cpf && <p className="error">{errors.cpf}</p>}
         </Item>
 
         <AdressInfo>
           <Title size="sm">Address</Title>
           <Item>
-            <Title size={16}> zip code</Title>
+            <Title size={16}>Zip code</Title>
             <InputZipCode
               value={data.zipCode || ""}
               onChange={handleChange("zipCode")}
+              type="tel"
             />
             {errors.zipCode && <p className="error">{errors.zipCode}</p>}
           </Item>
@@ -180,7 +187,7 @@ function Register({ onSubmit }: { onSubmit?: (user: IUser) => void }) {
           </Item>
 
           <Item>
-            <Title size={16}>state</Title>
+            <Title size={16}>State</Title>
             <Input value={data.state || ""} onChange={handleChange("state")} />
           </Item>
           {errors.state && <p className="error">{errors.state}</p>}
