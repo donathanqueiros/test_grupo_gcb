@@ -45,6 +45,7 @@ const Header = () => {
         <a href="#blog">
           <span>BLOG</span>
         </a>
+        {/* eslint-disable-next-line */}
         <a href="#">
           <span>JOIN</span>
         </a>
