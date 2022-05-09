@@ -39,13 +39,15 @@ const Header = () => {
       </div>
 
       <Menus>
-        <span>
-          <a href="#recipes">HEALTHY RECIPES</a>
-        </span>
-        <span>
-          <a href="#blog">BLOG </a>
-        </span>
-        <span>JOIN</span>
+        <a href="#recipes">
+          <span>HEALTHY RECIPES</span>
+        </a>
+        <a href="#blog">
+          <span>BLOG</span>
+        </a>
+        <a href="#">
+          <span>JOIN</span>
+        </a>
         <Button onClick={openModalRegister}>REGISTER</Button>
       </Menus>
 

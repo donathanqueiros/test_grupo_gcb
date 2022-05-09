@@ -30,7 +30,7 @@ export const Logo = styled.span`
   letter-spacing: 0;
 `;
 
-export const Menus = styled.div`
+export const Menus = styled.nav`
   max-width: 455px;
   width: 100%;
   height: 52px;
@@ -41,7 +41,8 @@ export const Menus = styled.div`
   span {
     letter-spacing: 0.02em;
   }
-  > span {
+
+  a > span {
     ${(props) => props.theme.fonts.secondary};
     color: #fff;
     font-weight: bold;

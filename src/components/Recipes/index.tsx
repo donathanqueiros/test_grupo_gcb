@@ -14,8 +14,7 @@ const dataCards = [
 
 function Recipes() {
   return (
-    <section id="recipes">
-      <Container>
+      <Container id="recipes">
         <Title>
           <h1>Our Best Recipes</h1>
           <span>
@@ -30,7 +29,6 @@ function Recipes() {
           ))}
         </RecipeList>
       </Container>
-    </section>
   );
 }
 
